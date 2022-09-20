@@ -36,3 +36,8 @@ def countFitness(M, large, X, Y):
                      M[X-1, Y+1], M[X+1, Y-1], M[X, Y-1], M[X-1, Y-1]]
 
     return neighbors
+
+
+def gridCellFitness(neighbor):  #funcion que retorna el fitness asociado a cada celda, lo calculca por celda
+    fitness= sum(neighbor)
+    return fitness
