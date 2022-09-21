@@ -1,7 +1,15 @@
 import numpy as np
 
 
-# M: matrix to take neighbors, large: matrix size, X: row number of the current cell, Y: column number of the current cell
+def randMatrix(matrix, lenMatrix, numbers):
+    cont = 0
+    for i in range(0, lenMatrix):
+        for j in range(0, lenMatrix):
+            matrix[i, j] = np.random.choice(numbers)
+    return matrix
+
+
+# M: matrix to take neighbors, large: matrix size, X: row number of the current cell, Y: column number of the current cel
 def countFitness(M, large, X, Y):
 
     if Y == 0:
@@ -118,4 +126,5 @@ def gridCellFitness(
     neighbor,
 ):  # funcion que retorna el fitness asociado a cada celda, lo calculca por celda
     fitness = sum(neighbor)
+
     return fitness

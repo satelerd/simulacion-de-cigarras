@@ -1,45 +1,46 @@
 import numpy as np
 from function_grid import countFitness, gridCellFitness
 
-# Inicialización del modelo
-# -------------------
-
-
-# Parametros
+# Parameters
 # -------------------
 C1 = 4  # Fitness Prey
 C2 = 7  # Fitness Predator
 Numbers = [C1, C2]
 
-LenMatrix = 10  # mínimo 2
-MaxIndex = LenMatrix - 1
-matrix = np.zeros((LenMatrix, LenMatrix))
+lenMatrix = 10  # min 2
+maxIndex = lenMatrix - 1
+zeroMatrix = np.zeros((lenMatrix, lenMatrix))
 
 
-# Matriz aleatoria
+# Random matrix
 # -------------------
 print("----------------------------------------")
-cont = 0
-for i in range(0, LenMatrix):
-    for j in range(0, LenMatrix):
-        matrix[i, j] = np.random.choice(Numbers)
 
+
+def randMatrix(matrix):
+    cont = 0
+    for i in range(0, lenMatrix):
+        for j in range(0, lenMatrix):
+            matrix[i, j] = np.random.choice(Numbers)
+    return matrix
+
+
+matrix = randMatrix(zeroMatrix)
 print(matrix)
 
 
-# Fitness por cada dato de la matriz
+# Fitness for each value of the matrix
 # -------------------
-T_Max = 100  # max iteraciones (de momento)
-matrix_Aux = matrix.copy()
-for i in range(0, LenMatrix):
-    for j in range(0, LenMatrix):
-        neighbors = countFitness(matrix, MaxIndex, i, j)
-        #    neighbors=np.array(neighbors)
-        matrix_Aux[i, j] = gridCellFitness(neighbors)
+auxMatrix = matrix.copy()
+for i in range(0, lenMatrix):
+    for j in range(0, lenMatrix):
+        neighbors = countFitness(matrix, maxIndex, i, j)
+        # neighbors=np.array(neighbors)
+        auxMatrix[i, j] = gridCellFitness(neighbors)
         print(gridCellFitness(neighbors))
 print(matrix)
 print("---------------------------")
-print(matrix_Aux)
+print(auxMatrix)
 
 
-# print(countFitness(matrix, MaxIndex, 5, 6))
+# print(countFitness(matrix, maxIndex, 5, 6))
