@@ -11,7 +11,6 @@ def randMatrix(matrix, lenMatrix, numbers):
 
 # M: matrix to take neighbors, large: matrix size, X: row number of the current cell, Y: column number of the current cel
 def countFitness(M, large, X, Y):
-
     if Y == 0:
         if X == 0:
             neighbors = [

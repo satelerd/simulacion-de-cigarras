@@ -1,5 +1,5 @@
 import numpy as np
-from function_grid import countFitness, gridCellFitness
+from function_grid import randMatrix, countFitness, gridCellFitness
 
 # Parameters
 # -------------------
@@ -15,16 +15,6 @@ zeroMatrix = np.zeros((lenMatrix, lenMatrix))
 # Random matrix
 # -------------------
 print("----------------------------------------")
-
-
-def randMatrix(matrix):
-    cont = 0
-    for i in range(0, lenMatrix):
-        for j in range(0, lenMatrix):
-            matrix[i, j] = np.random.choice(Numbers)
-    return matrix
-
-
 matrix = randMatrix(zeroMatrix)
 print(matrix)
 
