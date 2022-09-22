@@ -12,25 +12,24 @@ maxIndex = lenMatrix - 1
 zeroMatrix = np.zeros((lenMatrix, lenMatrix))
 
 
-# Random matrix
+# Start of the simulation
 # -------------------
-print("----------------------------------------")
 matrix = randMatrix(zeroMatrix)
+print("Initial Matrix")
 print(matrix)
+print()
 
 
 # Fitness for each value of the matrix
-# -------------------
 auxMatrix = matrix.copy()
-for i in range(0, lenMatrix):
+for i in range(0, lenMatrix):  # Matrix loop
     for j in range(0, lenMatrix):
         neighbors = countFitness(matrix, maxIndex, i, j)
         # neighbors=np.array(neighbors)
         auxMatrix[i, j] = gridCellFitness(neighbors)
         print(gridCellFitness(neighbors))
-print(matrix)
-print("---------------------------")
+
+print("Fitness Matrix")
 print(auxMatrix)
-
-
-# print(countFitness(matrix, maxIndex, 5, 6))
+# print(matrix)
+print()
