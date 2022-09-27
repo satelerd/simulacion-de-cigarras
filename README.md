@@ -13,3 +13,10 @@ El modelo marca un encuentro de dos disciplinas aparentemente no relacionadas: l
 Alumnos: [Felipe Acevedo](github.com/jorgeluisgarcia), [Daniel Sateler](github.com/joseluisgarcia)
 
 Profesores guías: [Eric Goles](https://es.wikipedia.org/wiki/Eric_Goles), [Marco Lardies](https://www.researchgate.net/profile/Marco-Lardies)
+
+
+
+## proximos pasos
+- en vez de tomar la suma, vemos cual es el numero que mas se repite (entre 4 y 7). si hay mas 4, es 4, si hay mas 7, es 7 (en caso de empate tenemso que hacer lo que queramos...)
+- hacer loop de generaciones (automatizar el final en caso que se detenga (converger))
+- imagenes de historial
