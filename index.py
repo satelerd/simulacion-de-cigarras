@@ -27,7 +27,7 @@ for i in range(0, lenMatrix):  # Matrix loop
         neighbors = countFitness(matrix, maxIndex, i, j)
         # neighbors=np.array(neighbors)
         auxMatrix[i, j] = gridCellFitness(neighbors)
-        print(gridCellFitness(neighbors))
+        # print(gridCellFitness(neighbors))
 
 print("Fitness Matrix")
 print(auxMatrix)

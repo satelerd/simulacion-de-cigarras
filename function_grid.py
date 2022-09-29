@@ -121,12 +121,7 @@ def countFitness(M, large, X, Y):
     return neighbors
 
 
-def gridCellFitness(
-    neighbor,
-):  # funcion que revisa la lista de vecinos y regresa el numero que mas se repita
-    print(neighbor)
-    print(set(neighbor), key=neighbor.count)
-    # return max(set(neighbor), key=neighbor.count)
-    # fitness = sum(neighbor)
-
-    # return fitness
+# Get the fitness of the current cell (the value that repeats the most)
+def gridCellFitness(neighbor):
+    fitness = max(set(neighbor), key=neighbor.count)
+    return fitness
