@@ -14,7 +14,7 @@ zeroMatrix = np.zeros((lenMatrix, lenMatrix))
 
 # Start of the simulation
 # -------------------
-matrix = randMatrix(zeroMatrix)
+matrix = randMatrix(zeroMatrix, lenMatrix, Numbers)
 print("Initial Matrix")
 print(matrix)
 print()
