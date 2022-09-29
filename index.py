@@ -36,6 +36,9 @@ for generation in range(0, lenGenerations):
 
     matrixHistory.append(auxMatrix)
 
+
+# Prints
+# -------------------
 print("Fitness Matrix")
 print(auxMatrix)
 # print(matrix)
