@@ -124,8 +124,8 @@ def countFitness(M, large, X, Y):
 # Get the fitness of the current cell (the value that repeats the most)
 def gridCellFitness(neighbor):
     fitness = max(set(neighbor), key=neighbor.count)
-    print(neighbor)
-    print(fitness)
+    # print(neighbor)
+    # print(fitness)
     return fitness
 
 
@@ -133,14 +133,14 @@ def animation(matrixHistory, lenGenerations, lenMatrix):
     import matplotlib.pyplot as plt
     import matplotlib.animation as animation
 
+    # 7 es amarillo y 4 morado (creo, no se como se decidio eso, pero funciona)
     fig = plt.figure()
     ims = []
     for i in range(0, lenGenerations):
-        plt.title("Generación " + str(i))
         im = plt.imshow(matrixHistory[i], animated=True)
         ims.append([im])
 
     ani = animation.ArtistAnimation(
-        fig, ims, interval=500, blit=True, repeat_delay=1000
-    )
+        fig, ims, interval=500, blit=True, repeat_delay=500
+    )  # interval es el tiempo entre cada generación
     plt.show()

@@ -7,11 +7,11 @@ C1 = 4  # Fitness Prey
 C2 = 7  # Fitness Predator
 Numbers = [C1, C2]
 
-lenMatrix = 4  # min 2
+lenMatrix = 300  # min 2
 maxIndex = lenMatrix - 1
 zeroMatrix = np.zeros((lenMatrix, lenMatrix))
-lenGenerations = 2
-matrixHistory = []
+lenGenerations = 15
+matrixHistory = []  # list of all matrix generations
 
 
 # Start of the simulation
@@ -46,11 +46,11 @@ print(auxMatrix)
 # print(matrix)
 print()
 
-print("Matrix History")
-for i in range(0, lenGenerations):
-    print(matrixHistory[i])
-    print()
+# print("Matrix History")
+# for i in range(0, lenGenerations):
+#     print(matrixHistory[i])
+#     print()
 
 # Animation
 # -------------------
-animation(matrixHistory, lenMatrix, lenGenerations)
+animation(matrixHistory, lenGenerations, lenMatrix)
