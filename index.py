@@ -1,5 +1,5 @@
 import numpy as np
-from function_grid import randMatrix, countFitness, gridCellFitness
+from function_grid import randMatrix, countFitness, gridCellFitness, animation
 
 # Parameters
 # -------------------
@@ -17,6 +17,7 @@ matrixHistory = []
 # Start of the simulation
 # -------------------
 matrix = randMatrix(zeroMatrix, lenMatrix, Numbers)
+matrixHistory.append(matrix)
 print("Initial Matrix")
 print(matrix)
 print()
@@ -36,6 +37,9 @@ for generation in range(0, lenGenerations):
 
     matrixHistory.append(auxMatrix)
 
+# -------------------
+# End of the simulation
+
 
 # Prints
 # -------------------
@@ -48,3 +52,7 @@ print("Matrix History")
 for i in range(0, lenGenerations):
     print(matrixHistory[i])
     print()
+
+# Animation
+# -------------------
+animation(matrixHistory, lenMatrix, lenGenerations)

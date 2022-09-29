@@ -125,3 +125,20 @@ def countFitness(M, large, X, Y):
 def gridCellFitness(neighbor):
     fitness = max(set(neighbor), key=neighbor.count)
     return fitness
+
+
+def animation(matrixHistory, lenGenerations, lenMatrix):
+    import matplotlib.pyplot as plt
+    import matplotlib.animation as animation
+
+    fig = plt.figure()
+    ims = []
+    for i in range(0, lenGenerations):
+        plt.title("Generación " + str(i))
+        im = plt.imshow(matrixHistory[i], animated=True)
+        ims.append([im])
+
+    ani = animation.ArtistAnimation(
+        fig, ims, interval=200, blit=True, repeat_delay=1000
+    )
+    plt.show()
