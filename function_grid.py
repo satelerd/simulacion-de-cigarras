@@ -124,6 +124,8 @@ def countFitness(M, large, X, Y):
 # Get the fitness of the current cell (the value that repeats the most)
 def gridCellFitness(neighbor):
     fitness = max(set(neighbor), key=neighbor.count)
+    print(neighbor)
+    print(fitness)
     return fitness
 
 
@@ -139,6 +141,6 @@ def animation(matrixHistory, lenGenerations, lenMatrix):
         ims.append([im])
 
     ani = animation.ArtistAnimation(
-        fig, ims, interval=200, blit=True, repeat_delay=1000
+        fig, ims, interval=500, blit=True, repeat_delay=1000
     )
     plt.show()
