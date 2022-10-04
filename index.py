@@ -1,4 +1,5 @@
 import numpy as np
+import time
 from function_grid import randMatrix, countFitness, gridCellFitness, animation
 
 # Parameters
@@ -7,21 +8,24 @@ C1 = 4  # Fitness Prey
 C2 = 7  # Fitness Predator
 Numbers = [C1, C2]
 
-lenMatrix = 100  # min 2
+lenMatrix = 150  # min 2
 maxIndex = lenMatrix - 1
 zeroMatrix = np.zeros((lenMatrix, lenMatrix))
 lenGenerations = 200
 matrixHistory = []  # list of all matrix generations
+time1 = time.time()
 
 
 # Start of the simulation
 # -------------------
 matrix = randMatrix(zeroMatrix, lenMatrix, Numbers)
 matrixHistory.append(matrix)
-print("Initial Matrix")
-print(matrix)
+print("Initial Matrix Created")
+# print(matrix)
 print()
 
+print(f"Starting the simulation")
+print()
 # Main loop for each generation
 for generation in range(0, lenGenerations):
     auxMatrix = matrixHistory[generation].copy()
@@ -31,26 +35,18 @@ for generation in range(0, lenGenerations):
             neighbors = countFitness(
                 matrixHistory[generation], maxIndex, i, j
             )  # Fitness for the cell
-            auxMatrix[i, j] = gridCellFitness(neighbors,Numbers)
+            auxMatrix[i, j] = gridCellFitness(neighbors, Numbers)
 
     matrixHistory.append(auxMatrix)
-
+time2 = time.time()
+print(f"Simulation finished in {int(time2 - time1)} seconds")
+print()
 # -------------------
 # End of the simulation
 
 
-# Prints
-# -------------------
-print("Fitness Matrix")
-print(auxMatrix)
-# print(matrix)
-print()
-
-# print("Matrix History")
-# for i in range(0, lenGenerations):
-#     print(matrixHistory[i])
-#     print()
-
 # Animation
 # -------------------
-animation(matrixHistory, lenGenerations, lenMatrix,C1,C2)
+print("Generating the animation")
+print()
+animation(matrixHistory, lenGenerations, lenMatrix, C1, C2)
