@@ -7,10 +7,10 @@ C1 = 4  # Fitness Prey
 C2 = 7  # Fitness Predator
 Numbers = [C1, C2]
 
-lenMatrix = 300  # min 2
+lenMatrix = 100  # min 2
 maxIndex = lenMatrix - 1
 zeroMatrix = np.zeros((lenMatrix, lenMatrix))
-lenGenerations = 15
+lenGenerations = 200
 matrixHistory = []  # list of all matrix generations
 
 
@@ -31,7 +31,7 @@ for generation in range(0, lenGenerations):
             neighbors = countFitness(
                 matrixHistory[generation], maxIndex, i, j
             )  # Fitness for the cell
-            auxMatrix[i, j] = gridCellFitness(neighbors)
+            auxMatrix[i, j] = gridCellFitness(neighbors,Numbers)
 
     matrixHistory.append(auxMatrix)
 
@@ -53,4 +53,4 @@ print()
 
 # Animation
 # -------------------
-animation(matrixHistory, lenGenerations, lenMatrix)
+animation(matrixHistory, lenGenerations, lenMatrix,C1,C2)

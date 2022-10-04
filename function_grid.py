@@ -122,14 +122,21 @@ def countFitness(M, large, X, Y):
 
 
 # Get the fitness of the current cell (the value that repeats the most)
-def gridCellFitness(neighbor):
-    fitness = max(set(neighbor), key=neighbor.count)
-    # print(neighbor)
-    # print(fitness)
-    return fitness
+def gridCellFitness(neighbor,Numbers):
+    Valor1=neighbor.count(Numbers[0])
+    Valor2=neighbor.count(Numbers[1])
+    if( Valor1<Valor2):
+        return Numbers[1]
+    elif(Valor1>Valor2):
+        return Numbers[0]
+    else:
+        return np.random.choice(Numbers)
+    #print(neighbor)
+    #print(fitness)
+    #return fitness
 
 
-def animation(matrixHistory, lenGenerations, lenMatrix):
+def animation(matrixHistory, lenGenerations, lenMatrix,A,B):
     import matplotlib.pyplot as plt
     import matplotlib.animation as animation
 
@@ -141,6 +148,9 @@ def animation(matrixHistory, lenGenerations, lenMatrix):
         ims.append([im])
 
     ani = animation.ArtistAnimation(
-        fig, ims, interval=500, blit=True, repeat_delay=500
+        fig, ims, interval=200, blit=True, repeat_delay=500
     )  # interval es el tiempo entre cada generación
+    plt.title("Investigación De Cigarras")
+    plt.xlabel(f"{A} = Prey, {B}= Predator")
+    plt.colorbar()
     plt.show()
