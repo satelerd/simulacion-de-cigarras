@@ -17,6 +17,4 @@ Profesores guías: [Eric Goles](https://es.wikipedia.org/wiki/Eric_Goles), [Marc
 
 
 ## proximos pasos
-- en vez de tomar la suma, vemos cual es el numero que mas se repite (entre 4 y 7). si hay mas 4, es 4, si hay mas 7, es 7 (en caso de empate tenemso que hacer lo que queramos...)
-- hacer loop de generaciones (automatizar el final en caso que se detenga (converger))
-- imagenes de historial
+- jugar con el fitness (tomar la suma, )

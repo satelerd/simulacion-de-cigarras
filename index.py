@@ -9,9 +9,10 @@ C2 = 7  # Fitness Predator
 Numbers = [C1, C2]
 
 lenMatrix = 150  # min 2
+lenGenerations = 150
+
 maxIndex = lenMatrix - 1
 zeroMatrix = np.zeros((lenMatrix, lenMatrix))
-lenGenerations = 200
 matrixHistory = []  # list of all matrix generations
 time1 = time.time()
 
