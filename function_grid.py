@@ -36,7 +36,7 @@ def animation(matrixHistory, lenGenerations, lenMatrix, A, B):
         ims.append([im])
 
     ani = animation.ArtistAnimation(
-        fig, ims, interval=5, blit=True, repeat_delay=500
+        fig, ims, interval=2000, blit=True, repeat_delay=500
     )  # interval es el tiempo entre cada generación
     plt.title("Investigación De Cigarras")
     plt.xlabel(f"{A} = Prey, {B}= Predator")
