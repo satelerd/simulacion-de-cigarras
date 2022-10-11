@@ -21,20 +21,6 @@ time1 = time.time()
 # Start of the simulation
 # -------------------
 matrix = randMatrix(zeroMatrix, lenMatrix, Numbers)
-# matrix = np.array(
-#     [
-#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-#         [4, 7, 4, 4, 4, 4, 4, 4, 4, 4],
-#         [4, 4, 7, 7, 4, 4, 4, 4, 4, 4],
-#         [4, 7, 7, 4, 4, 4, 4, 4, 4, 4],
-#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-#     ]
-# )
 matrixHistory.append(matrix)
 print("Initial Matrix Created")
 # print(matrix)
@@ -55,7 +41,7 @@ for generation in range(0, lenGenerations):
 
             # Get the fitness of the current cell
             auxMatrix[i, j] = gameOfLife(
-                matrixHistory[generation], i, j, neighbors, Numbers
+                matrixHistory[generation][i, j], neighbors, Numbers
             )
 
     matrixHistory.append(auxMatrix)
