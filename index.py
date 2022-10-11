@@ -9,8 +9,8 @@ C1 = 4  # Fitness Prey
 C2 = 7  # Fitness Predator
 Numbers = [C1, C2]
 
-lenMatrix = 5  # min 2
-lenGenerations = 2
+lenMatrix = 200  # min 2
+lenGenerations = 200
 
 maxIndex = lenMatrix - 1
 zeroMatrix = np.zeros((lenMatrix, lenMatrix))
@@ -20,16 +20,21 @@ time1 = time.time()
 
 # Start of the simulation
 # -------------------
-# matrix = randMatrix(zeroMatrix, lenMatrix, Numbers)
-matrix = np.array(
-    [
-        [4, 4, 4, 4, 4],
-        [4, 4, 4, 4, 4],
-        [4, 7, 7, 7, 4],
-        [4, 4, 4, 4, 4],
-        [4, 4, 4, 4, 4],
-    ]
-)
+matrix = randMatrix(zeroMatrix, lenMatrix, Numbers)
+# matrix = np.array(
+#     [
+#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+#         [4, 7, 4, 4, 4, 4, 4, 4, 4, 4],
+#         [4, 4, 7, 7, 4, 4, 4, 4, 4, 4],
+#         [4, 7, 7, 4, 4, 4, 4, 4, 4, 4],
+#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+#         [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+#     ]
+# )
 matrixHistory.append(matrix)
 print("Initial Matrix Created")
 # print(matrix)
@@ -43,7 +48,7 @@ for generation in range(0, lenGenerations):
 
     for i in range(0, lenMatrix):  # Matrix loop
         for j in range(0, lenMatrix):
-            print(matrixHistory[generation][i, j])
+            # print(matrixHistory[generation][i, j])
 
             # Get the neighbors of the current cell
             neighbors = countFitness(matrixHistory[generation], maxIndex, i, j)
