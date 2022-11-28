@@ -40,12 +40,12 @@ for generation in range(0, lenGenerations):
             neighbors = countFitness(matrixHistory[generation], maxIndex, i, j)
 
             # Get the fitness of the current cell
-            # auxMatrix[i, j] = gridCellFitness(neighbors, Numbers)
+            auxMatrix[i, j] = gridCellFitness(neighbors, Numbers)
     
             # Game of Life mode
-            auxMatrix[i, j] = gameOfLife(
-                matrixHistory[generation][i, j], neighbors, Numbers
-            )
+            #auxMatrix[i, j] = gameOfLife(
+           #     matrixHistory[generation][i, j], neighbors, Numbers
+            #)
 
     matrixHistory.append(auxMatrix)
 time2 = time.time()
