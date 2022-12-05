@@ -4,13 +4,13 @@ from function_grid import randMatrix, countNeighbors,F, animation, cellElection
 from alternative_fitness import gameOfLife
 # Parameters
 # -------------------
-C1 = 4  # Fitness Predator
+C1 = 3  # Fitness Predator
 C2 = 2  # Fitness Prey
 T=C1*C2
 Numbers = [C1, C2]
 
 lenMatrix = 15  # min 2
-lenGenerations = 3*2*lenMatrix*3
+lenGenerations = 3*2*lenMatrix*10
 
 maxIndex = lenMatrix - 1
 zeroMatrix = np.zeros((lenMatrix, lenMatrix))

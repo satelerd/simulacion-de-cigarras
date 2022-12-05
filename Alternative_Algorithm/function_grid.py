@@ -83,11 +83,12 @@ def F(M,neighbor, Numbers, value, T):
 
 
 def cellElection(N1,N2,N3,N4,value,List,M):
-    position=0
-    
+    position=4
+    initialValue= List[-1]
     for i in range(0,len(List)):
-        if (List[i]>=position):
+        if (List[i]>initialValue):
             position=i
+            initialValue=List[i]
     if (position==0):
         return M[N1[0],N1[1]]
     elif(position==1):
@@ -117,7 +118,7 @@ def animation(matrixHistory, lenGenerations, lenMatrix, A, B):
         ims.append([im])
 
     ani = animation.ArtistAnimation(
-        fig, ims, interval=50, blit=True, repeat_delay=500
+        fig, ims, interval=30, blit=True, repeat_delay=500
     )  # interval es el tiempo entre cada generación
     plt.title("Investigación De Cigarras")
     plt.xlabel(f"{A} = Predator, {B}= Prey")
