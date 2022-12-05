@@ -2,16 +2,15 @@ import numpy as np
 import time
 from function_grid import randMatrix, countNeighbors,F, animation, cellElection
 from alternative_fitness import gameOfLife
-
 # Parameters
 # -------------------
-C1 = 3  # Fitness Predator
+C1 = 4  # Fitness Predator
 C2 = 2  # Fitness Prey
 T=C1*C2
 Numbers = [C1, C2]
 
-lenMatrix = 10  # min 2
-lenGenerations = 3*2*lenMatrix
+lenMatrix = 15  # min 2
+lenGenerations = 3*2*lenMatrix*3
 
 maxIndex = lenMatrix - 1
 zeroMatrix = np.zeros((lenMatrix, lenMatrix))
@@ -31,6 +30,8 @@ print(f"Starting the simulation")
 print()
 # Main loop for each generation
 for generation in range(0, lenGenerations):
+    
+    
     auxMatrix = matrixHistory[generation].copy()
     x_param= np.random.randint(lenMatrix)
     y_param= np.random.randint(lenMatrix)
@@ -70,7 +71,12 @@ for generation in range(0, lenGenerations):
     print(fitnessCompare)
     matrixHistory.append(auxMatrix)
     
-    auxMatrix[x_param,y_param]= cellElection(N1,N2,N3,N4,[x_param,y_param],fitnessCompare,auxMatrix)
+    if (value==auxMatrix[N1[0],N1[1]] and value==auxMatrix[N2[0],N2[1]] and value==auxMatrix[N3[0],N3[1]] and value==auxMatrix[N4[0],N4[1]] and value==Numbers[0]):
+        auxMatrix[x_param,y_param]=np.nan
+    elif(value!=Numbers[0] and value!=Numbers[1]):
+        continue
+    else:
+        auxMatrix[x_param,y_param]= cellElection(N1,N2,N3,N4,[x_param,y_param],fitnessCompare,auxMatrix)
     
     
     

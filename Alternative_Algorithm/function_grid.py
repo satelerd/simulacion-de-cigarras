@@ -21,18 +21,19 @@ def arrayFunction(X, Y, T):  # X e Y son los valores de las posiciones en la mat
             yList.append(1)
         else:
             yList.append(0)
-    if (X == Y):
+    if ((X == Y)):
         return np.array([xList])
+
     else:
         return np.array([xList, yList])
 
 
-arr = arrayFunction(3, 3, 6)
 
 
 
 
 def f1(array):  # f1 predator
+
     shape = np.shape(array)
     fit = 0
     if (shape[0] == 1):
@@ -49,6 +50,7 @@ def f1(array):  # f1 predator
 
 
 def f2(array):  # f2 Prey
+
     shape = np.shape(array)
     fit = 0
     if (shape[0] == 1):
@@ -82,6 +84,7 @@ def F(M,neighbor, Numbers, value, T):
 
 def cellElection(N1,N2,N3,N4,value,List,M):
     position=0
+    
     for i in range(0,len(List)):
         if (List[i]>=position):
             position=i
@@ -114,7 +117,7 @@ def animation(matrixHistory, lenGenerations, lenMatrix, A, B):
         ims.append([im])
 
     ani = animation.ArtistAnimation(
-        fig, ims, interval=200, blit=True, repeat_delay=500
+        fig, ims, interval=50, blit=True, repeat_delay=500
     )  # interval es el tiempo entre cada generación
     plt.title("Investigación De Cigarras")
     plt.xlabel(f"{A} = Predator, {B}= Prey")
